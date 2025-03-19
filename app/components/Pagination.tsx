@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store/store";
@@ -6,7 +6,7 @@ import { fetchDeliveries } from "../slices/DeliveriesSlice";
 
 export default function Pagination() {
   const dispatch = useDispatch<AppDispatch>();
-  const { entity, loading, limit, page, hasMore } = useSelector(
+  const {  loading, limit, page, hasMore } = useSelector(
     (state: RootState) => state.deliveries
   );
   const observer = useRef<IntersectionObserver | null>(null);
@@ -31,7 +31,7 @@ export default function Pagination() {
         observer.current.disconnect();
       }
     };
-  }, [loading, hasMore, page, limit]);
+  }, [loading, hasMore, page, limit,dispatch]);
 
   return (
     <div>

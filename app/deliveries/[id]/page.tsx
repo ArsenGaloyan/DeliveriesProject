@@ -10,7 +10,7 @@ const DeliveryDetail = ()=>{
 	const cleanId = decodeURIComponent(String(id));
 	console.log("Исправленный ID:", cleanId);
 	const router = useRouter();
-	const { entity: deliveries, loading } = useAppSelector((state) => state.deliveries);
+	const { entity: deliveries } = useAppSelector((state) => state.deliveries);
 
 
 	console.log("ID из useParams:", id);

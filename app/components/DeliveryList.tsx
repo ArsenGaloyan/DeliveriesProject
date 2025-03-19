@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchDeliveries } from "../slices/DeliveriesSlice";
-import { RootState, AppDispatch } from "../store/store";
 import DeliveryCard from "./DeliveryCard";
 import { DeliveryCardProps} from "../types/types";
 import Filter from "./Filter";
@@ -12,14 +11,12 @@ const DeliveriesList: React.FC = () => {
   const dispatch = useAppDispatch();
   const {
     entity: deliveries,
-    loading,
-    error,
     filtredStatus,
   } = useAppSelector((state) => state.deliveries);
 
   useEffect(() => {
     dispatch(fetchDeliveries({page:1, limit:5}));
-  }, []);
+  }, [dispatch]);
   console.log(123);
 
   useEffect(()=>{

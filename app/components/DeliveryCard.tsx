@@ -9,7 +9,7 @@ import Link from "next/link";
 
 
 
-const DeliveryCard: React.FC<DeliveryCardProps> = ({ uuid, currentStatus, type, createdAt, fromLocation, toLocation }) => {
+const DeliveryCard: React.FC<DeliveryCardProps> = ({ uuid, currentStatus,  createdAt, fromLocation, toLocation }) => {
   // const dispatch = useDispatch();
   // const { uuid, type, isReturn } = delivery;
  
