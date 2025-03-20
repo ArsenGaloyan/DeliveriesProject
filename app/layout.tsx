@@ -1,4 +1,3 @@
-'use client'
 import ReduxProvider from "./store/ReduxProvider";
 // import { store } from "./store/store";
 import type { Metadata } from "next";
