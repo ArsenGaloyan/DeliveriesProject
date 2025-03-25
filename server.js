@@ -1,18 +1,12 @@
-const express = require("express");
 const jsonServer = require("json-server");
 
-const app = express();
+const app = jsonServer.create();
 const router = jsonServer.router("data.json"); 
 const middlewares = jsonServer.defaults();
 
 app.use(middlewares);
 app.use(express.json());
-app.use("./", router); 
+app.use(router); 
 
-const PORT = 3001; 
+module.exports = app; 
 
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
-});
-
-module.exports = app;
